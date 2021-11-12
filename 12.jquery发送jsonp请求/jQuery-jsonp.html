@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div>
+			<button type="button">点我发送jsonp请求</button>
+			<div id="app">
+				
+			</div>
+		</div>
+		<script src="../jQuery%20v3.6.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('button').eq(0).click(function(){
+				$.getJSON('http://127.0.0.1:8000/jquery_jsonp_server?callback=?',function(data){
+					// console.log(data);
+					$('#app').html(`
+						状态：${data.exist},
+						原因：${data.msg}
+					`)
+				})
+			})
+		</script>
+	</body>
+</html>

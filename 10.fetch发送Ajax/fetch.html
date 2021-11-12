@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<button type="button">fetch</button>
+		<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+		<script type="text/javascript">
+			const btn=document.querySelectorAll("button")[0];
+			btn.onclick=function(){
+				fetch("http://127.0.0.1:8000/fetch_server",{
+					method:'post',
+					headers:{
+						name:"ws"
+					},
+					body:'username=admin&password=admin'
+				});
+			};
+		</script>
+	</body>
+</html>
